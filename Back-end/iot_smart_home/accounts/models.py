@@ -13,7 +13,7 @@ class User(AbstractUser):
 class Contractor(models.Model):
     phone = models.CharField(max_length=15, blank=True, null=True)
     salary = models.FloatField(null=False, default=0.00)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='contractor')
     address = models.TextField(null=True, blank=True)
     under_service_area = models.TextField(blank=True, null=True)
     resume = models.TextField(blank=True, null=True)
@@ -22,6 +22,6 @@ class Contractor(models.Model):
 
 class Customer(models.Model):
     phone = models.CharField(max_length=15, blank=True, null=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='customer')
     # preferences
     # personalization
