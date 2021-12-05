@@ -4,10 +4,12 @@ from django.contrib import admin
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DefaultUserAdmin
 
-from accounts.models import User
+from accounts.models import User, Customer, Contractor
 
 
 admin.site.register(User)
+admin.site.register(Customer)
+admin.site.register(Contractor)
 # class UserAdmin(DefaultUserAdmin):
 #     fieldsets = (
 #         (None, {'fields': ('username', 'password')}),

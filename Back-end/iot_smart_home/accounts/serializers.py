@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import User
+from .models import User, Customer, Contractor
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -14,3 +14,28 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+
+
+class CustomerSerializer(serializers.ModelSerializer):
+    user = serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field='username'
+    )
+
+    class Meta:
+        model = Customer
+        fields = ('user',)
+
+
+class ContractorSerializer(serializers.ModelSerializer):
+    user = serializers.SlugRelatedField(
+        many=True,
+        read_only=True,
+        slug_field='username'
+    )
+
+    class Meta:
+        model = Contractor
+        fields = ('user', 'under_service_area', 'salary', 'resume')
+
