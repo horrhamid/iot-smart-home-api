@@ -8,6 +8,7 @@ class User(AbstractUser):
         ('Cu', 'Customer')
     ]
     role = models.CharField(blank=True, null=True, max_length=2, choices=ROLE_CHOISES)
+    avatar = models.ImageField(verbose_name='avatar', null=True, blank=True)
 
 
 class Contractor(models.Model):
