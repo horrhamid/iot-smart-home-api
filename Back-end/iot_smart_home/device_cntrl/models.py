@@ -14,5 +14,8 @@ class Device(models.Model):
     version = models.CharField(max_length=20, default='1.0.0')
     product_code = models.CharField(max_length=20, null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 

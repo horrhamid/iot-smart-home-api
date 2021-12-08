@@ -20,16 +20,25 @@ class User(AbstractUser):
     role = models.CharField(blank=True, null=True, max_length=2, choices=ROLE_CHOISES)
     avatar = models.ImageField(verbose_name='avatar', null=True, blank=True)
 
+    def __str__(self):
+        return self.username
+
 
 class Contractor(models.Model):
     salary = models.FloatField(null=False, default=0.00)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='contractor')
     under_service_area = models.TextField(blank=True, null=True)
     resume = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.user
     # messages
 
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='customer')
+
+    def __str__(self):
+        return self.user
     # preferences
     # personalization

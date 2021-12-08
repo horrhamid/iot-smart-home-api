@@ -13,3 +13,6 @@ class House(models.Model):
     main_contractor = models.ForeignKey(Contractor, on_delete=models.SET_NULL, blank=True, null=True)
     devices = models.ManyToManyField(Device, related_name='used_home', blank=True, null=True)
     is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.post_code

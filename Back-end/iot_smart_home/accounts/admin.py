@@ -5,11 +5,15 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DefaultUserAdmin
 
 from accounts.models import User, Customer, Contractor
+from home_cntrl.models import House
+from device_cntrl.models import Device
 
 
 admin.site.register(User)
 admin.site.register(Customer)
 admin.site.register(Contractor)
+admin.site.register(House)
+admin.site.register(Device)
 # class UserAdmin(DefaultUserAdmin):
 #     fieldsets = (
 #         (None, {'fields': ('username', 'password')}),
