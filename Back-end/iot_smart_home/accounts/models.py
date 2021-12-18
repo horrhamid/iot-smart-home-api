@@ -21,7 +21,7 @@ class User(AbstractUser):
     avatar = models.ImageField(verbose_name='avatar', null=True, blank=True)
 
     def __str__(self):
-        return self.username
+        return str(self.username) or ''
 
 
 class Contractor(models.Model):
@@ -31,7 +31,7 @@ class Contractor(models.Model):
     resume = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.user
+        return str(self.user) or ''
     # messages
 
 
@@ -39,6 +39,6 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='customer')
 
     def __str__(self):
-        return self.user
+        return str(self.user) or ''
     # preferences
     # personalization

@@ -1,19 +1,40 @@
-from django.contrib import admin
 
-# Register your models here.
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin as DefaultUserAdmin
-
 from accounts.models import User, Customer, Contractor
 from home_cntrl.models import House
 from device_cntrl.models import Device
 
 
-admin.site.register(User)
-admin.site.register(Customer)
-admin.site.register(Contractor)
-admin.site.register(House)
-admin.site.register(Device)
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Contractor)
+class ContractorAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(House)
+class HouseAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Device)
+class DeviceAdmin(admin.ModelAdmin):
+    pass
+
+
+# admin.site.register(User, UserAdmin)
+# admin.site.register(Customer, CustomerAdmin)
+# admin.site.register(Contractor, ContractorAdmin)
+# admin.site.register(House, HouseAdmin)
+# admin.site.register(Device, DeviceAdmin)
 # class UserAdmin(DefaultUserAdmin):
 #     fieldsets = (
 #         (None, {'fields': ('username', 'password')}),

@@ -1,6 +1,6 @@
 from django.db import models
 from accounts.models import Customer, Contractor
-from device_cntrl.models import Device
+# from device_cntrl.models import Device
 # Create your models here.
 
 
@@ -11,8 +11,8 @@ class House(models.Model):
     owner = models.OneToOneField(Customer, on_delete=models.CASCADE, related_name='own_house')
     members = models.ManyToManyField(Customer, related_name='house_member')
     main_contractor = models.ForeignKey(Contractor, on_delete=models.SET_NULL, blank=True, null=True)
-    devices = models.ManyToManyField(Device, related_name='used_home', blank=True, null=True)
+    # devices = models.ManyToManyField(Device, related_name='used_home')
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.post_code
+        return self.post_code or ''
