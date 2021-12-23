@@ -1,5 +1,6 @@
 from django.db import models
 from home_cntrl.models import House
+from accounts.models import Customer
 
 
 # Create your models here.
@@ -19,12 +20,22 @@ class Device(models.Model):
         return self.name
 
 
-class DeviseInUsed(models.Model):
+class DeviceInUsed(models.Model):
     device = models.ForeignKey(Device, on_delete=models.CASCADE)
     house = models.ForeignKey(House, on_delete=models.CASCADE)
     turn_on_time = models.TimeField(blank=True, null=True)
     turn_off_time = models.TimeField(blank=True, null=True)
     volume = models.CharField(max_length=8, default='NOT SET')
     state = models.CharField(max_length=8, default='NOT SET')
+
+
+class Reports(models.Model):
+    device = models.ForeignKey(DeviceInUsed, on_delete=models.DO_NOTHING)
+    customer = models.ForeignKey(Customer, on_delete=models.DO_NOTHING)
+    old_volume = models.CharField(max_length=8, default='NOT SET')
+    new_volume = models.CharField(max_length=8, default='NOT SET')
+    old_state = models.CharField(max_length=8, default='NOT SET')
+    new_state = models.CharField(max_length=8, default='NOT SET')
+    time = models.TimeField(auto_now=True)
 
 
