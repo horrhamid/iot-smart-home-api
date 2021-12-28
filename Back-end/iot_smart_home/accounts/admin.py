@@ -2,7 +2,7 @@
 from django.contrib import admin
 from accounts.models import User, Customer, Contractor
 from home_cntrl.models import House
-from device_cntrl.models import Device
+from device_cntrl.models import Device, DeviceInUsed, Reports
 
 
 @admin.register(User)
@@ -28,6 +28,17 @@ class HouseAdmin(admin.ModelAdmin):
 @admin.register(Device)
 class DeviceAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(DeviceInUsed)
+class DeviceInUsedAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Reports)
+class ReportAdmin(admin.ModelAdmin):
+    pass
+
 
 
 # admin.site.register(User, UserAdmin)

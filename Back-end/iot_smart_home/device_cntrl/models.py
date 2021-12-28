@@ -28,6 +28,9 @@ class DeviceInUsed(models.Model):
     volume = models.CharField(max_length=8, default='NOT SET')
     state = models.CharField(max_length=8, default='NOT SET')
 
+    def __str__(self):
+        return self.device.name
+
 
 class Reports(models.Model):
     device = models.ForeignKey(DeviceInUsed, on_delete=models.DO_NOTHING)
@@ -37,5 +40,8 @@ class Reports(models.Model):
     old_state = models.CharField(max_length=8, default='NOT SET')
     new_state = models.CharField(max_length=8, default='NOT SET')
     time = models.TimeField(auto_now=True)
+
+    def __str__(self):
+        return (self.device.device.name + ' ' + self.customer.user.username)
 
 

@@ -39,6 +39,6 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='customer')
 
     def __str__(self):
-        return str(self.user) or ''
+        return str(self.user.username) or ''
     # preferences
     # personalization
