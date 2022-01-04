@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from .models import House
 from .serializers import HouseSerializer
 from accounts.models import Customer
+from device_cntrl.models import DeviceInUsed
 # Create your views here.
 
 
@@ -19,6 +20,4 @@ class Dashboard(viewsets.ModelViewSet):
         return queryset
 
 
-
-
-
+# class HomeManagement()
