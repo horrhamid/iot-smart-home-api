@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import viewsets
 from .models import House
-from .serializers import HouseSerializer
+from .serializers import HouseSerializer, HouseManagementSerializer
 from accounts.models import Customer
 from device_cntrl.models import DeviceInUsed
 # Create your views here.
@@ -20,4 +20,13 @@ class Dashboard(viewsets.ModelViewSet):
         return queryset
 
 
-# class HomeManagement()
+class HomeManagement(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated, )
+    serializer_class = HouseManagementSerializer
+
+    def get_queryset(self):
+        # data = self.request.data
+        id = 1
+        print('hi')
+        queryset = DeviceInUsed.objects.filter(device__deviceinused__house_id=id)
+        return queryset
