@@ -24,7 +24,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -33,14 +32,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
-    'device_cntrl',
-    'home_cntrl',
+    'django.contrib.sites',
+    'accounts.apps.AccountsConfig',
+    'device_cntrl.apps.DeviceCntrlConfig',
+    'home_cntrl.apps.HomeCntrlConfig',
+    'dashboard.apps.DashboardConfig',
+
     'rest_framework',
     'rest_framework.authtoken',
-    'axes',
-    'dashboard'
+
+    'dj_rest_auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+
+    'django_bleach',
+    'admin_honeypot',
+ #   'axes',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,14 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'axes.middleware.AxesMiddleware',
-]
-
-AUTHENTICATION_BACKENDS = [
-    # AxesBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
-    'axes.backends.AxesBackend',
-    # Django ModelBackend is the default authentication backend.
-    'django.contrib.auth.backends.ModelBackend',
+   # 'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'iot_smart_home.urls'
@@ -111,6 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# email validation 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -137,6 +145,56 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
+     'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '10/minute',
+        'user': '1000/day'
+    }
 }
 
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+    },
+}
+##########################################################################
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+##########################################################################
+#django_bleach
+BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a']
+
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style', 'src']
+
+BLEACH_ALLOWED_STYLES = [
+    'font-family', 'font-weight', 'text-decoration', 'font-variant'
+]
+
+BLEACH_ALLOWED_PROTOCOLS = [
+    'http', 'https', 'data'
+]
+
+BLEACH_STRIP_TAGS = True
+
+BLEACH_STRIP_COMMENTS = False
+
+##########################################################################
+#django_admin_honeypot
+ADMIN_HONEYPOT_EMAIL_ADMINS = True
+
+ADMINS = (
+   ('erfan', 'erfanbahrami1999@gmail.com'),
+)
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '352652de20c0bb'
+EMAIL_HOST_PASSWORD = '225af22c90b4a4'
+EMAIL_PORT = '2525'
+
+##########################################################################
