@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-$e3+$bor6!nq_!0gha3!a&ph*vjw-)us67d=(1k@i971!qu3uo
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+LOGIN_URL = 'two_factor:login'
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -50,6 +50,13 @@ INSTALLED_APPS = [
     'django_bleach',
     'admin_honeypot',
     # 'axes',
+
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    'django_otp.plugins.otp_hotp',
+    'django_otp.plugins.otp_static',
+    'two_factor',
+    'formtools',
 ]
 
 SITE_ID = 1
@@ -62,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_otp.middleware.OTPMiddleware',
    # 'axes.middleware.AxesMiddleware',
 ]
 

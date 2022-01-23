@@ -9,4 +9,7 @@ pip install django-admin-honeypot
 pip install django-bleach
 pip install django-axes
 pip install django-allauth
-
+pip install django-formtools
+pip install django-otp
+pip install django-two-factor-auth
+pip install django-two-factor-auth[phonenumbers]
