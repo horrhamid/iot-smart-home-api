@@ -33,23 +33,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    # apps
     'accounts.apps.AccountsConfig',
     'device_cntrl.apps.DeviceCntrlConfig',
     'home_cntrl.apps.HomeCntrlConfig',
     'dashboard.apps.DashboardConfig',
-
+    # rest framework
     'rest_framework',
     'rest_framework.authtoken',
-
+    # security
     'dj_rest_auth',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
-
     'django_bleach',
     'admin_honeypot',
- #   'axes',
+    # 'axes',
 ]
 
 SITE_ID = 1

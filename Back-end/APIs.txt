@@ -1,0 +1,26 @@
+
+completed APIs
+/accounts
+http://127.0.0.1:8000/admin/ #admin honeypot
+http://127.0.0.1:8000/admin-panel/ #admin panel - user: admin pass: admin
+http://127.0.0.1:8000/accounts/dj-rest-auth/registration/ register new user - requirements: username, password, email
+http://127.0.0.1:8000/accounts/dj-rest-auth/login/ login user - requirements: username, email, password
+http://127.0.0.1:8000/accounts/dj-rest-auth/logout/ logout user - requirements: {"key": "token"}
+http://127.0.0.1:8000/accounts/customer/ get all customers or add new or change details - models viewset
+http://127.0.0.1:8000/accounts/contractor/ get all contractors or add new or change details - models viewset
+
+/device control
+http://127.0.0.1:8000/devices/model/device/ get all devices or add new or change details - models viewset - Authentication in header needed
+http://127.0.0.1:8000/devices/model/deviceinused/ get all deviceinused or add new or change details - models viewset - Authentication in header needed
+
+/home control
+http://127.0.0.1:8000/homes/model/house/ get all deviceinused or add new or change details - models viewset
+
+
+incompleted APIs
+update method of deviceinused
+create method of deviceinused
+create reports
+username APIs ...
+
+...
