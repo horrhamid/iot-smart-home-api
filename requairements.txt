@@ -1,0 +1,12 @@
+pip install django
+pip install pillow	
+pip install djangorestframework
+pip install markdown      
+pip install django-filter
+pip install 'dj-rest-auth[with_social]'
+pip install dj-rest-auth
+pip install django-admin-honeypot
+pip install django-bleach
+pip install django-axes
+pip install django-allauth
+
