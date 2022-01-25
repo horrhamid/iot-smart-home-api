@@ -1,0 +1,17 @@
+django==3.2.11
+pillow	
+djangorestframework
+markdown      
+django-filter
+django-rest-auth[with_social]
+django-rest-auth
+dj_rest_auth
+django-admin-honeypot
+django-bleach
+django-axes
+django-allauth
+django-formtools
+django-otp
+django-two-factor-auth
+django-two-factor-auth[phonenumbers]
+fabric3
