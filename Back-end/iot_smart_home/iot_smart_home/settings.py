@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'device_cntrl.apps.DeviceCntrlConfig',
     'home_cntrl.apps.HomeCntrlConfig',
     'dashboard.apps.DashboardConfig',
+    'update.apps.UpdateConfig',
     # rest framework
     'rest_framework',
     'rest_framework.authtoken',
