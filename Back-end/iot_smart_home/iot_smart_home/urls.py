@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin-panel/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('devices/', include('device_cntrl.urls')),
-    path('homes/', include('home_cntrl.urls'))
+    path('homes/', include('home_cntrl.urls')),
+    path('update/', include('update.urls'))
 ]
 
