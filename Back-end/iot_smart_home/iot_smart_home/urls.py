@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('admin-panel/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
+    path('dashboard/', include('dashboard.urls')),
     path('devices/', include('device_cntrl.urls')),
     path('homes/', include('home_cntrl.urls')),
     path('update/', include('update.urls'))
