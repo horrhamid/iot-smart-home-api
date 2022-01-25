@@ -1,7 +1,7 @@
 from django.db import models
 from home_cntrl.models import House
 from accounts.models import Customer
-
+from django_bleach.models import BleachField
 
 # Create your models here.
 
@@ -11,7 +11,7 @@ class Device(models.Model):
     type = models.CharField(max_length=50, null=True, blank=True)
     # cntrl_commands
     # default settings
-    details = models.TextField(null=True, blank=True)
+    details = BleachField(null=True, blank=True)
     descriptions = models.TextField(null=True, blank=True)
     version = models.CharField(max_length=20, default='1.0.0')
     product_code = models.CharField(max_length=20, null=True, blank=True)
