@@ -1,5 +1,0 @@
-__pycache__/
-*__pycache__/
-migrations/
-db.sqlite3
-.idea
