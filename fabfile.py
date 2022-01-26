@@ -4,13 +4,14 @@ import os
 
 env.hosts = ['192.168.1.4']
 site_root = os.getcwd()
+print(site_root)
 venv = 'source %s/venv/bin/activate' % site_root.rsplit('/', 1)[0]
 
 def _install_deps():
     sudo('%s && pip install -r %s/requirements.txt' % (venv, site_root))
 
 def _migrate():
-    sudo('%s && python manage.py migrate' % venv)
+    sudo('%s && python %s/Back-end/iot_smart_home/manage.py migrate' % (venv, site_root))
 
 def _get_code():
     sudo('git pull origin main')
