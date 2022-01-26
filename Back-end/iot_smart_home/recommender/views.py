@@ -26,4 +26,4 @@ class RecommenderView(viewsets.ReadOnlyModelViewSet):
             serializer = self.get_serializer(queryset, many=True)
             return Response(serializer.data)
         except Exception as e:
-            return Response({"Status": 'house or customer does not exists', 'status_code': status.HTTP_404_NOT_FOUND})
+            return Response({"Status": 'customer does not exists', 'status_code': status.HTTP_404_NOT_FOUND})
