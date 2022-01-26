@@ -23,6 +23,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('devices/', include('device_cntrl.urls')),
     path('homes/', include('home_cntrl.urls')),
-    path('update/', include('update.urls'))
+    path('update/', include('update.urls')),
+    path('recommender/', include('recommender.urls'))
 ]
 

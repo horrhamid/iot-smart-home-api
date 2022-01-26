@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'home_cntrl.apps.HomeCntrlConfig',
     'dashboard.apps.DashboardConfig',
     'update.apps.UpdateConfig',
+    'recommender.apps.RecommenderConfig',
     # rest framework
     'rest_framework',
     'rest_framework.authtoken',
