@@ -17,7 +17,6 @@ class RecommenderView(viewsets.ReadOnlyModelViewSet):
             customer = Customer.objects.get(user__id=user_id)
             device_type = request.query_params.get('type')
             queryset = Reports.objects.filter(customer=customer, device__device__type=device_type)
-            print('queryset: ', queryset)
             page = self.paginate_queryset(queryset)
             if page is not None:
                 serializer = self.get_serializer(page, many=True)

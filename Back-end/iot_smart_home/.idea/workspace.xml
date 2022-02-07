@@ -23,7 +23,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -97,7 +97,14 @@
       <workItem from="1642927411269" duration="13309000" />
       <workItem from="1643022365041" duration="9306000" />
       <workItem from="1643111376787" duration="4565000" />
-      <workItem from="1643202513954" duration="445000" />
+      <workItem from="1643202513954" duration="2756000" />
+      <workItem from="1643279903161" duration="3546000" />
+      <workItem from="1643458433432" duration="93000" />
+      <workItem from="1643549447377" duration="2489000" />
+      <workItem from="1643562104320" duration="3229000" />
+      <workItem from="1643572339933" duration="780000" />
+      <workItem from="1643884655011" duration="1948000" />
+      <workItem from="1643975127110" duration="58000" />
     </task>
     <servers />
   </component>
