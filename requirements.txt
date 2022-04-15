@@ -15,3 +15,4 @@ django-otp
 django-two-factor-auth
 django-two-factor-auth[phonenumbers]
 fabric3
+phonenumbers
