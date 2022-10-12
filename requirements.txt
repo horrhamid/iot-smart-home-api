@@ -16,4 +16,4 @@ django-otp
 django-two-factor-auth
 django-two-factor-auth[phonenumbers]
 fabric3
-cryptography==2.8
+cryptography==3.2
