@@ -1,5 +1,6 @@
-django==3.2.11
-pillow	
+django==3.2.15
+pillow
+wheel	
 djangorestframework
 markdown      
 django-filter
@@ -15,3 +16,4 @@ django-otp
 django-two-factor-auth
 django-two-factor-auth[phonenumbers]
 fabric3
+cryptography==2.8
